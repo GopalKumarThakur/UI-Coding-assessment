@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+  <script>
+  
+  var array = [1,2,3,4,5,6,7,8,9];
+  	
+  function getSuffleOfArrays(){
+	  var suffleArrayValue = array.sort(() => Math.random() - 0.5);
+	  suffleAndSort(suffleArrayValue);
+  }
+  	window.onload = function() {
+  		getSortOfArrays();
+	}
+  function getSortOfArrays(){
+	  var suffleArrayValue = array.sort();
+	  suffleAndSort(suffleArrayValue);
+  }
+  
+  function suffleAndSort(cardNumber){
+  		var finalElement="";
+  		var newDiv = document.getElementById('suffle');
+  		cardNumber.forEach(myFunction);
+  		function myFunction(inputNumber){
+  			switch(inputNumber){
+	  			case 1:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#00000078'><div class='card-body'><h4 class='card-title'>1</h4></div></div>";
+	  				break;
+	  			case 2:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#9494ab'><div class='card-body'><h4 class='card-title'>2</h4></div></div>";
+	  				break;
+	  			case 3:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#FFFFFF'><div class='card-body'><h4 class='card-title'>3</h4></div></div>";
+	  				break;
+	  			case 4:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#EFEFEF'><div class='card-body'><h4 class='card-title'>4</h4></div></div>";
+	  				break;
+	  			case 5:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#72C3DC'><div class='card-body'><h4 class='card-title'>5</h4></div></div>";
+	  				break;
+	  			case 6:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#2B8EAD'><div class='card-body'><h4 class='card-title'>6</h4></div></div>";
+	  				break;
+	  			case 7:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#6F98A8'><div class='card-body'><h4 class='card-title'>7</h4></div></div>";
+	  				break;
+	  			case 8:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#BFBFBF'><div class='card-body'><h4 class='card-title'>8</h4></div></div>";
+	  				break;
+	  			case 9:
+	  				finalElement += "<div class='card col-sm-4 card-custom ' style='width:150px;height:150px;background-color:#2F454E'><div class='card-body'><h4 class='card-title'>9</h4></div></div>";
+	  				break;	
+  			}
+  			newDiv.innerHTML = finalElement;
+  		}
+  		document.getElementById('containerId').appendChild(newDiv);
+  	}
+  </script>
+</head>
+
+<style>
+    .card-custom {
+       /*  max-width: 128px; */
+    }
+</style>
+<body>
+<div id="containerId" class="container">
+	<div class="row my-3">
+		<button type="button" class="btn btn-primary mr-3" onclick="getSuffleOfArrays();">Suffle</button>
+		<button type="button" class="btn btn-primary" onclick="getSortOfArrays();">Sort</button>
+	</div>
+	<h6 class="text-center">Suffle and sort </h6>
+	<div id="suffle" class="row mt-1 justify-content-center"></div>
+</div>
+
+</body>
+</html>
